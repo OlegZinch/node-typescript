@@ -1,12 +1,11 @@
 import express from 'express'
 
+import todoRoutes from './routes/todo.js'
+
 const app = express()
 
-app.get('/', (req, res) => {
-  console.log(req.method)
-  res.json({ message: 'Hello World' })
-})
+app.use(express.json())
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000')
-})
+app.use(todoRoutes)
+
+app.listen(3000)
