@@ -1,6 +1,11 @@
 import express from 'express'
 import { addTodo, getTodos, getTodo, updateTodo, removeTodo } from '../data.ts'
 
+// enum TODO_TYPE {
+//   BASIC,
+//   URGENT,
+// }
+
 const router = express.Router()
 
 // function handlePostTodos(req: Request, res: Response) {
