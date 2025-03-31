@@ -1,10 +1,12 @@
-import { createServer } from 'node:http'
+import express from 'express'
 
-const server = createServer((req, res) => {
-  console.log(`Request method: ${req.method}, URL: ${req.url}`)
-  res.end('Hello, world!')
+const app = express()
+
+app.get('/', (req, res) => {
+  console.log(req.method)
+  res.json({ message: 'Hello World' })
 })
 
-server.listen(3000, () => {
-  console.log('Server is running at http://localhost:3000')
+app.listen(3000, () => {
+  console.log('Server is running on port 3000')
 })
